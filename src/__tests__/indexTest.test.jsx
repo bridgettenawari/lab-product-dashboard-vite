@@ -36,6 +36,6 @@ test('removes product from the dashboard when "Remove" button is clicked', () =>
 
   if (removeButtons.length > 0) {
     fireEvent.click(removeButtons[0])
-    expect(screen.queryAllByText(/Remove/i).length).toBe(removeButtons.length - 1) // Expect removal to work
+    expect(removeButtons[0]).not.toBeInTheDocument() // Expect removal to work
   }
 })
